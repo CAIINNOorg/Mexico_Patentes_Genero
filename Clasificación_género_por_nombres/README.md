@@ -1,4 +1,4 @@
-# Clasificacion_Genero
+# Clasificación_Género
 
 ### Documentos clave
 
