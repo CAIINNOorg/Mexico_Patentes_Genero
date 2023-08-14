@@ -1,4 +1,4 @@
-# Patentes_Verdes_OMPI_EPO
+# Patentes_Verdes
 
 ### Documentos clave
 
@@ -19,4 +19,6 @@ Para realizar la clasificación de las patentes verdes de la base de datos se si
 * Tras pasar un proceso de limpieza de datos, en primer instancia el código selecciona dos subconjuntos de la base de datos original de patentes que serán utilizadas para cada clasificación: una consulta que selecciona todas las columnas, con excepción de las columnas “IPC” e “IPC Clases”, y que se utilizará para hacer la clasificación de IPC; y otra con todas las columnas con excepción de “CPC” y “CPC clases” pues se utilizará para la clasificación de CPC.
 * Luego, define dos funciones (ipcWIPO y cpcWIPO) que se encargan de buscar las patentes que coincidan en términos de IPC o CPC entre las bases de datos de patentes y las de clasificaciones de la WIPO. Si se encuentran coincidencias en las listas, las patentes se etiquetan con un valor de 1 y se extrae el valor coincidente en otra columna. 
 * A continuación, se unen las dos tablas resultantes en una sola y agrega una columna que indica si una patente se clasifica como una invención verde (verdadera o falsa) según los criterios del WIPO. Posteriormente, repite el proceso para hacer la clasificación según la lista de EU con las funciones (ipcEU y cpcEU).
-* Finalmente, se reordenan ambas tablas finales resultantes y se descargan por separado.
+* Una vez identificadas las patentes verdes para cada institución, se unen ambos dataframes. De esta forma se podrá identificar, por medio de una columna dicotómica si, si una patente es verde o no ya sea por una, por la otra o por ambas instituciones.
+* Posteriormente el código se encargará de identificar las patentes cuya clase fue clasificada como verde por ambas instituciones extrayendo dicha clase.
+* Finalmente, se orderará ese dataframe y podrá descargarse junto con los anteriores.
